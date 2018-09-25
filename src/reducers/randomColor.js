@@ -7,7 +7,7 @@ const RDColorReducer = (state = randomColorInitialState, action) => {
     
     switch(action.type) {
         case randomColorType: 
-            return [...state, state[0].color]
+            return [...state, color]
         default:
             return state
     }
