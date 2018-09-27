@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
-
+import { connect } from 'react-redux';
 class Front extends Component {
     constructor(props) {
         super(props);
     }
+    changeColorBody = () => {
+        const color = this.props.rdColor[Math.floor(Math.random()*this.props.rdColor.length)]
+        document.body.style.backgroundColor = color
+    }
     render() {
+        
         return (
+            
             <div className="container">
                 <div id="quote-box" className="quote-box">
                     <div className="quote-text">
@@ -20,7 +26,7 @@ class Front extends Component {
                         <a target="_blank" id="tweet-quote" className="btn" href={"https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=" + this.props.content}>
                             <i className="fab fa-twitter"></i>
                         </a>
-                        <button id="new-quote" className="btn">New Quote</button>
+                        <button onClick={() => this.changeColorBody()} id="new-quote" className="btn">New Quote</button>
                     </div>
                 </div>
                 <div className="footer">
@@ -31,4 +37,12 @@ class Front extends Component {
     }
 }
 
-export default Front;
+const mapStateToProps = (state, ownProps) => {
+    return {
+        rdColor: state.randomColors
+    }
+}
+
+
+
+export default connect(mapStateToProps)(Front);
