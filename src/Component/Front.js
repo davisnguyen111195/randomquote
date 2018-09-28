@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 class Front extends Component {
     constructor(props) {
         super(props);
     }
+    componentDidMount() {
+        document.body.style.backgroundColor = "black"
+    }
     changeColorBody = () => {
-        const color = this.props.rdColor[Math.floor(Math.random()*this.props.rdColor.length)]
+        let color = this.props.rdColor[Math.floor(Math.random()*this.props.rdColor.length)]
         document.body.style.backgroundColor = color
+        return color
     }
     render() {
         
@@ -17,7 +22,7 @@ class Front extends Component {
                     <div className="quote-text">
                         <i className="fa fa-quote-left"></i>
                         
-                        <span className="text">{this.props.content}</span>
+                        <span style={{ background : this.color }} className="text">{this.props.content}</span>
                     </div>
                     <div className="quote-author">
                         <span className="author">- {this.props.author}</span>
@@ -26,7 +31,10 @@ class Front extends Component {
                         <a target="_blank" id="tweet-quote" className="btn" href={"https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=" + this.props.content}>
                             <i className="fab fa-twitter"></i>
                         </a>
+                        
                         <button onClick={() => this.changeColorBody()} id="new-quote" className="btn">New Quote</button>
+                        <CSSTransitionGroup transitionName="example" transitionEnterTimeout={700} transitionLeaveTimeout={700}>
+                        </CSSTransitionGroup>
                     </div>
                 </div>
                 <div className="footer">

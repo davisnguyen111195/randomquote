@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './App.css';
+
 import Front from './Component/Front';
 import { connect } from 'react-redux';
 class App extends Component {
@@ -13,9 +13,8 @@ class App extends Component {
     );
   }
 }
-const mapStateToProps = (state, ownProps) => {
-  return {
-    cssColor: state.randomColors
-  }
-}
-export default connect(mapStateToProps)(App);
+
+
+
+
+export default App;
