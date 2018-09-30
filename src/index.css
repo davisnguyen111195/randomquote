@@ -6,6 +6,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
 #quote-box{
@@ -15,6 +16,7 @@
   width: 80vh;
   height: 40vh;
   height: auto;
+  
   
 }
 .quote-text {
@@ -29,6 +31,8 @@
   text-align: right;
   padding-right: 3.0em;
 }
+
+
 #tweet-quote {
   background-color:rgb(39, 174, 96);
   color: white;
@@ -38,7 +42,9 @@
   height: 40px;
   width: 40px;
 }
-
+#tweet-quote:hover{
+  opacity: 0,9;
+}
 #new-quote {
   font-family: 'Raleway', sans-serif;
   font-size: 1.0em;
@@ -49,12 +55,16 @@
   height: 40px;
   width: 120px;
 }
+#new-quote:hover {
+  opacity: 0.9;
+}
 .buttons {
   display: block;
   padding-bottom: 5.0em;
   padding-left: 3.0em;
   padding-right: 3.0em;
 }
+
 .footer {
   padding-top: 0.8em;
   color: white;
@@ -66,3 +76,11 @@ a {
   color: white;
   text-decoration: none;
 } 
+.anim-enter {
+  opacity: 0;
+}
+ 
+.anim-enter.anim-enter-active {
+  opacity: 1;
+  
+}
