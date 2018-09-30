@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
-import dbQuote from '../Database/quotes.json';
 import store1 from '../Stores';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 

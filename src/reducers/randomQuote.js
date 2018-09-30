@@ -11,18 +11,19 @@ let initialQuoteState = ({
 })
 let getQuote = () => {
     let NumberKey = Math.floor(Math.random()*dbQuote.quotes.length)
-    console.log(NumberKey)
     dbQuote.quotes.map((value, key) => {
         if(key === NumberKey) {
-            [...initialQuoteState.randomQuote = value]
+            return [...initialQuoteState.randomQuote = value]
         }
+        return NumberKey;
     })
+    
 }
 
 const rdQuoteReducer = (state = initialQuoteState, action) => {
     switch (action.type) {
         case randomQuoteType:
-            getQuote()   
+            console.log(getQuote())   
             return state
         default: 
             return state
